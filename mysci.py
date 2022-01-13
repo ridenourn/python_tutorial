@@ -24,3 +24,20 @@ with open(filename,'r') as datafile:
          value = t(split_line[i])
          data[column].append(value)
 
+# Compute the wind chill temperature (this is a function, indented 4 spaces below)
+def compute_windchill(t, v):
+    a = 35.74
+    b = 0.6215
+    c = 35.75
+    d = 0.4275
+
+    v2 = v ** 2
+    wci = a + (b * t) - (c * v2) + (d * t * v2)
+    return wci
+
+# Compute wind chill factor (this calc has to be after the function)
+windchill = []
+for temp, windspeed in zip(data['tempout'], data['windspeed']):
+    windchill.append(compute_windchill(temp, windspeed))
+
+
