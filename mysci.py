@@ -43,3 +43,14 @@ for temp, windspeed in zip(data['tempout'], data['windspeed']):
 # DEBUG
 #for wc_data, wc_comp in zip(data['windchill'], windchill):
 #    print(f'{wc_data:.5f}   {wc_comp:.5f}   {wc_data -wc_comp:.5f}')
+
+# Output comparison of data
+print('                ORIGINAL  COMPUTED')
+print(' DATE    TIME  WINDCHILL WINDCHILL DIFFERENCE')
+print('------- ------ --------- --------- ----------')
+zip_data = zip(data['date'], data['time'], data['windchill'], windchill)
+for date, time, wc_orig, wc_comp in zip_data:
+   wc_diff = wc_orig - wc_comp
+   print(f'{date} {time:>6} {wc_orig:9.6f} {wc_comp:9.6f} {wc_diff:10.6f}')
+
+
