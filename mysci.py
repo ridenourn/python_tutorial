@@ -1,8 +1,8 @@
 # Column names and column indices to read
-columns = {'date': 0, 'time': 1, 'tempout': 2}
+columns = {'date': 0, 'time': 1, 'tempout': 2, 'windspeed': 7}
 
 # Data types for each column (only if non string)
-types = {'tempout': float}
+types = {'tempout': float, 'windspeed': float}
 
 # Initialize my data variable
 data = {}
